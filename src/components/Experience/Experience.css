@@ -1,0 +1,219 @@
+.experience-section {
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+/* ── LAYOUT ───────────────────────────────────────────────── */
+.timeline-layout {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-rail {
+  position: absolute;
+  left: 16px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--red-primary), var(--cyan), var(--purple));
+  opacity: 0.3;
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 56px;
+}
+
+/* ── YEAR MARKER ──────────────────────────────────────────── */
+.timeline-year {
+  margin-bottom: 16px;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.timeline-year::before {
+  content: '';
+  position: absolute;
+  left: -42px;
+  width: 12px;
+  height: 12px;
+  background: var(--red-primary);
+  border: 2px solid var(--bg-secondary);
+  transform: rotate(45deg);
+}
+
+.timeline-year span {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--red-primary);
+  letter-spacing: 0.08em;
+  font-family: var(--font-display);
+}
+
+.timeline-year:first-of-type {
+  margin-top: 0;
+}
+
+/* ── NODE ─────────────────────────────────────────────────── */
+.timeline-node {
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -48px;
+  top: 16px;
+  width: 24px;
+  height: 24px;
+  background: var(--bg-secondary);
+  border: 2px solid var(--dot-color, var(--red-primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.timeline-dot:hover {
+  box-shadow: 0 0 16px var(--dot-color, var(--red-primary));
+  transform: scale(1.15);
+}
+
+.dot-icon {
+  font-size: 8px;
+  color: var(--dot-color, var(--red-primary));
+  line-height: 1;
+}
+
+.dot-ping {
+  position: absolute;
+  inset: -4px;
+  border: 1px solid var(--dot-color, var(--red-primary));
+  opacity: 0;
+}
+
+.timeline-dot:hover .dot-ping {
+  animation: node-ping 1s ease forwards;
+}
+
+/* ── CARD ─────────────────────────────────────────────────── */
+.timeline-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 20px;
+  cursor: pointer;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  margin-bottom: 8px;
+}
+
+.timeline-card:hover {
+  border-color: var(--border-red);
+  box-shadow: var(--glow-panel);
+}
+
+.timeline-node.expanded .timeline-card {
+  border-color: var(--border-red);
+}
+
+.timeline-card-header {
+  margin-bottom: 8px;
+}
+
+.timeline-type-badge {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  padding: 2px 8px;
+  border: 1px solid;
+  text-transform: uppercase;
+}
+
+.timeline-card-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  margin-top: 8px;
+}
+
+.timeline-card-subtitle {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* ── EXPANDED BODY ────────────────────────────────────────── */
+.timeline-card-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding-top: 0;
+}
+
+.timeline-card-body.open {
+  max-height: 300px;
+  padding-top: 16px;
+}
+
+.timeline-card-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.timeline-tag {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  text-transform: uppercase;
+}
+
+.timeline-expand-hint {
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  margin-top: 12px;
+  text-align: right;
+  transition: color var(--transition);
+}
+
+.timeline-card:hover .timeline-expand-hint {
+  color: var(--red-primary);
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .timeline-layout {
+    max-width: 100%;
+  }
+
+  .timeline-items {
+    padding-left: 40px;
+  }
+
+  .timeline-dot {
+    left: -36px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .timeline-year::before {
+    left: -30px;
+  }
+}

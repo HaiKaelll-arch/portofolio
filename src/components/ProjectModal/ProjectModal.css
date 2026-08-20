@@ -1,0 +1,218 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-red);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modal-in 0.35s cubic-bezier(0.2, 0, 0, 1.1) forwards;
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+}
+
+.modal-panel::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* ── HEADER ───────────────────────────────────────────────── */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.modal-system-label {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.modal-close {
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: color var(--transition), transform var(--transition);
+  padding: 4px 8px;
+}
+
+.modal-close:hover {
+  color: var(--red-primary);
+  transform: rotate(90deg);
+}
+
+/* ── BODY ─────────────────────────────────────────────────── */
+.modal-body {
+  padding: 28px 24px;
+}
+
+.modal-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.modal-project-id {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--red-primary);
+  text-transform: uppercase;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.modal-year-cat {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+
+.modal-divider {
+  height: 1px;
+  background: linear-gradient(90deg, var(--red-primary), transparent);
+  margin-bottom: 24px;
+}
+
+/* ── SECTIONS ─────────────────────────────────────────────── */
+.modal-section {
+  margin-bottom: 24px;
+}
+
+.modal-section-label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--red-primary);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.modal-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* ── TECH LIST ────────────────────────────────────────────── */
+.modal-tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-tech-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.modal-tech-bullet {
+  font-size: 8px;
+  color: var(--red-primary);
+}
+
+.modal-tech-name {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  flex: 1;
+  text-transform: uppercase;
+}
+
+/* ── FEATURES ─────────────────────────────────────────────── */
+.modal-features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-feature-item {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── ACTIONS ──────────────────────────────────────────────── */
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.modal-pending {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* ── CORNERS ──────────────────────────────────────────────── */
+.modal-corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
+.modal-corner-tl {
+  top: 0; left: 0;
+  border-top: 2px solid var(--cyan);
+  border-left: 2px solid var(--cyan);
+}
+
+.modal-corner-br {
+  bottom: 0; right: 0;
+  border-bottom: 2px solid var(--red-primary);
+  border-right: 2px solid var(--red-primary);
+}
+
+@media (max-width: 480px) {
+  .modal-panel {
+    clip-path: none;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

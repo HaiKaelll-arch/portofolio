@@ -1,0 +1,149 @@
+/* ============================================================
+   KEYFRAME ANIMATIONS
+   ============================================================ */
+
+/* ── GLITCH EFFECT ──────────────────────────────────────────── */
+@keyframes glitch-1 {
+  0%   { clip-path: inset(20% 0 60% 0); transform: translate(-3px, 0); }
+  20%  { clip-path: inset(80% 0 0% 0);  transform: translate(3px, 0); }
+  40%  { clip-path: inset(40% 0 40% 0); transform: translate(-2px, 0); }
+  60%  { clip-path: inset(60% 0 20% 0); transform: translate(2px, 0); }
+  80%  { clip-path: inset(0% 0 80% 0);  transform: translate(-1px, 0); }
+  100% { clip-path: inset(50% 0 30% 0); transform: translate(0, 0); }
+}
+
+@keyframes glitch-2 {
+  0%   { clip-path: inset(60% 0 20% 0); transform: translate(2px, 0); color: var(--cyan); }
+  25%  { clip-path: inset(10% 0 70% 0); transform: translate(-2px, 0); color: var(--red-primary); }
+  50%  { clip-path: inset(30% 0 50% 0); transform: translate(3px, 0); color: var(--cyan); }
+  75%  { clip-path: inset(70% 0 10% 0); transform: translate(-3px, 0); color: var(--red-primary); }
+  100% { clip-path: inset(45% 0 35% 0); transform: translate(0, 0); color: transparent; }
+}
+
+@keyframes glitch-skew {
+  0%   { transform: skewX(0deg); }
+  10%  { transform: skewX(-2deg); }
+  20%  { transform: skewX(0deg); }
+  30%  { transform: skewX(1deg); }
+  40%  { transform: skewX(0deg); }
+  100% { transform: skewX(0deg); }
+}
+
+/* ── TYPING CURSOR ──────────────────────────────────────────── */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── SCAN LINE ──────────────────────────────────────────────── */
+@keyframes scan {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* ── PULSE GLOW ─────────────────────────────────────────────── */
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 42, 61, 0.3); }
+  50%       { box-shadow: 0 0 25px rgba(255, 42, 61, 0.6), 0 0 50px rgba(255, 42, 61, 0.3); }
+}
+
+@keyframes pulse-cyan {
+  0%, 100% { box-shadow: 0 0 8px rgba(0, 229, 255, 0.2); }
+  50%       { box-shadow: 0 0 20px rgba(0, 229, 255, 0.5), 0 0 40px rgba(0, 229, 255, 0.2); }
+}
+
+/* ── FLOAT ──────────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ── BORDER MARCH ───────────────────────────────────────────── */
+@keyframes border-march {
+  0%   { background-position: 0 0, 100% 0, 100% 100%, 0 100%; }
+  100% { background-position: 200% 0, 100% 200%, -100% 100%, 0 -100%; }
+}
+
+/* ── SPIN ───────────────────────────────────────────────────── */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── DATA STREAM ────────────────────────────────────────────── */
+@keyframes data-stream {
+  0%   { opacity: 0; transform: translateY(-10px); }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(10px); }
+}
+
+/* ── FLICKER ────────────────────────────────────────────────── */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92%       { opacity: 1; }
+  93%       { opacity: 0.8; }
+  94%       { opacity: 1; }
+  96%       { opacity: 0.7; }
+  97%       { opacity: 1; }
+}
+
+/* ── SLIDE IN ───────────────────────────────────────────────── */
+@keyframes slide-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── MODAL OPEN ─────────────────────────────────────────────── */
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── NODE PULSE ─────────────────────────────────────────────── */
+@keyframes node-ping {
+  0%   { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* ── MATRIX RAIN (text) ─────────────────────────────────────── */
+@keyframes matrix-drop {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  5%   { opacity: 0.7; }
+  95%  { opacity: 0.4; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* ── LINE GROW ──────────────────────────────────────────────── */
+@keyframes line-grow-h {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+@keyframes line-grow-v {
+  from { height: 0; }
+  to   { height: 100%; }
+}
+
+/* ── BOOT SEQUENCE ──────────────────────────────────────────── */
+@keyframes boot-flash {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}

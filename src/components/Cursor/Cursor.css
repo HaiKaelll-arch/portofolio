@@ -1,0 +1,72 @@
+/* Cursor — only shown on pointer devices */
+@media (hover: hover) {
+  .cursor-dot {
+    position: fixed;
+    top: -4px;
+    left: -4px;
+    width: 8px;
+    height: 8px;
+    background: var(--red-primary);
+    pointer-events: none;
+    z-index: 99999;
+    will-change: transform;
+    /* No transition — directly follows mouse */
+    mix-blend-mode: normal;
+  }
+
+  .cursor-dot.clicking {
+    background: var(--cyan);
+    transform-origin: center !important;
+  }
+
+  .cursor-ring {
+    position: fixed;
+    top: -20px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    z-index: 99998;
+    will-change: transform;
+    /* Lagged ring */
+  }
+
+  /* Four corner pieces forming a crosshair-bracket */
+  .cursor-ring::before,
+  .cursor-ring::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  .cursor-ring::before {
+    border: 1px solid rgba(255, 42, 61, 0.6);
+    border-radius: 0;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+
+  .cursor-ring.hovering::before {
+    transform: scale(1.6);
+    border-color: var(--cyan);
+  }
+
+  .cursor-ring.clicking::before {
+    transform: scale(0.8);
+    border-color: var(--cyan);
+  }
+
+  /* Corner decoration lines */
+  .cursor-ring::after {
+    border-top: 2px solid var(--cyan);
+    border-left: 2px solid var(--cyan);
+    width: 8px;
+    height: 8px;
+    top: 0;
+    left: 0;
+    transition: opacity 0.15s;
+  }
+
+  .cursor-ring.hovering::after {
+    opacity: 0;
+  }
+}
