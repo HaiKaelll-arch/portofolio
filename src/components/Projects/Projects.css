@@ -75,6 +75,54 @@
   border-bottom: 1px solid var(--border);
 }
 
+.project-thumb-img-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-thumb-img-wrapper.fit-contain {
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.08) 0%, rgba(13, 16, 26, 0.95) 75%);
+  padding: 16px;
+}
+
+.project-thumb-img-wrapper.fit-cover {
+  background: var(--bg-secondary);
+  padding: 0;
+}
+
+.project-thumb-img {
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.project-thumb-img.fit-contain {
+  max-width: 110px;
+  max-height: 110px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 16px rgba(0, 102, 255, 0.35));
+}
+
+.project-thumb-img.fit-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.project-card:hover .project-thumb-img.fit-contain {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 24px rgba(0, 229, 255, 0.6));
+}
+
+.project-card:hover .project-thumb-img.fit-cover {
+  transform: scale(1.05);
+}
+
 .project-thumb-bg {
   position: absolute;
   inset: 0;

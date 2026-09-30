@@ -128,14 +128,14 @@ export default function ProjectModal({ project, onClose }) {
               >
                 ● LIVE_PROJECT
               </a>
-            ) : (
+            ) : project.liveStatus ? (
               <div className="modal-pending">
                 <span className="mono text-dim">LIVE_URL: </span>
                 <span className="mono" style={{ color: 'var(--amber)' }}>
-                  {project.liveStatus || 'COMING_SOON'}
+                  {project.liveStatus}
                 </span>
               </div>
-            )}
+            ) : null}
           </div>
         </div>
 

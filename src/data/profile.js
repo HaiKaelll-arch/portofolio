@@ -35,8 +35,8 @@ export const profile = {
       url: "https://github.com/HaiKaelll-arch",
     },
     instagram: {
-      username: "LINK_PENDING",
-      url: null,
+      username: "f3brii_79",
+      url: "https://www.instagram.com/f3brii_79?stkn=cjA3Y2xzMmxqcWp5",
     },
     linkedin: {
       username: "LINK_PENDING",

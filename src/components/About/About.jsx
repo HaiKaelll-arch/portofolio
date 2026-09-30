@@ -26,7 +26,11 @@ export default function About() {
 
               <div className="profile-avatar-area">
                 <div className="avatar-placeholder">
-                  <span className="avatar-initials">FH</span>
+                  <img
+                    src="/profile.jpg"
+                    alt="Febri Haikal Rabbani"
+                    className="avatar-photo"
+                  />
                   <div className="avatar-ring" aria-hidden="true" />
                   <div className="avatar-ring avatar-ring-2" aria-hidden="true" />
                 </div>

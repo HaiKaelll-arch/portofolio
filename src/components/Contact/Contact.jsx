@@ -110,8 +110,32 @@ export default function Contact({ onShowToast }) {
                   ) : (
                     <span className="social-tag text-muted">GITHUB: LINK_PENDING</span>
                   )}
-                  <span className="social-tag text-muted">INSTAGRAM: LINK_PENDING</span>
-                  <span className="social-tag text-muted">LINKEDIN: LINK_PENDING</span>
+                  {profile.social.instagram.url ? (
+                    <a
+                      href={profile.social.instagram.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="social-tag text-cyan"
+                      id="contact-instagram-link"
+                    >
+                      INSTAGRAM: @{profile.social.instagram.username} ↗
+                    </a>
+                  ) : (
+                    <span className="social-tag text-muted">INSTAGRAM: LINK_PENDING</span>
+                  )}
+                  {profile.social.linkedin.url ? (
+                    <a
+                      href={profile.social.linkedin.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="social-tag text-cyan"
+                      id="contact-linkedin-link"
+                    >
+                      LINKEDIN: @{profile.social.linkedin.username} ↗
+                    </a>
+                  ) : (
+                    <span className="social-tag text-muted">LINKEDIN: LINK_PENDING</span>
+                  )}
                 </div>
               </div>
             </div>

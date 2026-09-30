@@ -49,7 +49,7 @@ export default function Skills() {
 
         {/* Hard Skills */}
         {activeTab === 'hard' && (
-          <div className="skills-loadout reveal" role="tabpanel" aria-labelledby="skills-tab-hard">
+          <div className="skills-loadout tab-panel-enter" role="tabpanel" aria-labelledby="skills-tab-hard">
             <div className="loadout-header">
               <span className="mono loadout-title">&gt; TECH_MODULES // ACTIVE_LOADOUT</span>
               <span className="mono" style={{ fontSize: '10px', color: 'var(--text-dim)' }}>
@@ -88,7 +88,7 @@ export default function Skills() {
 
         {/* Soft Skills */}
         {activeTab === 'soft' && (
-          <div className="skills-soft reveal" role="tabpanel" aria-labelledby="skills-tab-soft">
+          <div className="skills-soft tab-panel-enter" role="tabpanel" aria-labelledby="skills-tab-soft">
             <div className="loadout-header">
               <span className="mono loadout-title">&gt; BEHAVIORAL_MODULES // LOADED</span>
             </div>
@@ -106,7 +106,7 @@ export default function Skills() {
 
         {/* Languages */}
         {activeTab === 'lang' && (
-          <div className="skills-lang reveal" role="tabpanel" aria-labelledby="skills-tab-lang">
+          <div className="skills-lang tab-panel-enter" role="tabpanel" aria-labelledby="skills-tab-lang">
             <div className="loadout-header">
               <span className="mono loadout-title">&gt; LANGUAGE_CORE // COMMUNICATION_MODULES</span>
             </div>

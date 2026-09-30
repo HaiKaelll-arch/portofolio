@@ -15,13 +15,23 @@ function ProjectCard({ project, onInspect }) {
     >
       {/* Thumbnail area */}
       <div className="project-thumb">
-        <div className="project-thumb-bg">
-          <div className="project-thumb-pattern" aria-hidden="true">
-            {project.technologies.map((t) => (
-              <span key={t} className="mono thumb-tech-label">{t}</span>
-            ))}
+        {project.thumbnail ? (
+          <div className={`project-thumb-img-wrapper ${project.thumbnailFit === 'cover' ? 'fit-cover' : 'fit-contain'}`}>
+            <img
+              src={project.thumbnail}
+              alt={project.title}
+              className={`project-thumb-img ${project.thumbnailFit === 'cover' ? 'fit-cover' : 'fit-contain'}`}
+            />
           </div>
-        </div>
+        ) : (
+          <div className="project-thumb-bg">
+            <div className="project-thumb-pattern" aria-hidden="true">
+              {project.technologies.map((t) => (
+                <span key={t} className="mono thumb-tech-label">{t}</span>
+              ))}
+            </div>
+          </div>
+        )}
         <div className="project-thumb-overlay">
           <span className="project-inspect-hint mono">[ INSPECT ]</span>
         </div>
@@ -76,9 +86,9 @@ function ProjectCard({ project, onInspect }) {
               >
                 ● LIVE
               </a>
-            ) : (
-              <span className="project-link-pending mono">{project.liveStatus || 'COMING_SOON'}</span>
-            )}
+            ) : project.liveStatus ? (
+              <span className="project-link-pending mono">{project.liveStatus}</span>
+            ) : null}
           </div>
         </div>
       </div>

@@ -38,9 +38,10 @@ export default function Experience() {
             {timelineItems.map((item, i) => (
               <div
                 key={item.id}
-                className={`timeline-node reveal ${i % 2 === 0 ? 'reveal-left' : 'reveal-right'} ${activeItem === item.id ? 'expanded' : ''}`}
-                style={{ animationDelay: `${i * 0.1}s` }}
+                className={`reveal ${i % 2 === 0 ? 'reveal-left' : 'reveal-right'}`}
+                style={{ transitionDelay: `${i * 0.1}s` }}
               >
+                <div className={`timeline-node ${activeItem === item.id ? 'expanded' : ''}`}>
                 {/* Year marker */}
                 {(i === 0 || timelineItems[i - 1].year !== item.year) && (
                   <div className="timeline-year" aria-label={`Year ${item.year}`}>
@@ -93,8 +94,9 @@ export default function Experience() {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
         </div>
       </div>
     </section>

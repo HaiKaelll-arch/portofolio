@@ -24,9 +24,10 @@ export const projects = [
       "Galeri grid view",
     ],
     githubUrl: "https://github.com/HaiKaelll-arch/galeri.git",
-    liveUrl: null, // Set to URL string when available
-    liveStatus: "COMING_SOON",
-    thumbnail: null, // Set to image path when available
+    liveUrl: null,
+    liveStatus: null,
+    thumbnail: "/galeri-logo.png",
+    thumbnailFit: "contain",
     featured: true,
   },
   {
@@ -48,9 +49,10 @@ export const projects = [
       "Animasi UI",
     ],
     githubUrl: "https://github.com/HaiKaelll-arch/edukasi-narkoba.git",
-    liveUrl: null, // Set to URL string when available
-    liveStatus: "COMING_SOON",
-    thumbnail: null,
+    liveUrl: "https://haikaelll-arch.github.io/edukasi-narkoba/",
+    liveStatus: "LIVE",
+    thumbnail: "/website edukasi.png",
+    thumbnailFit: "cover",
     featured: true,
   },
   // ── ADD NEW PROJECTS BELOW THIS LINE ──────────────────────
